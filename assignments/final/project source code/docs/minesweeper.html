@@ -1,0 +1,44 @@
+<!DOCTYPE html><html lang="en"><head><title>Minesweeper</title><link rel="stylesheet" href="./css/stylesheet.css"><meta name="viewport" content="width=device-width, initial-scale=1"></head>
+<body><!-- nav bar -->
+    <!-- Navigation Bar -->
+    <nav id="nav-mobile" class="hidden">
+        <button><img src="images/menu.svg" alt="Nav menu"></button>
+        <div class="hidden">
+            <a href="index.html">Home</a>
+            <a href="game.html">Games</a>
+            <a href="team.html">Team</a>
+            <a href="documents.html">Documents</a>
+            <p class="capstone">UMGC CMSC 495 Capstone Project</p>
+        </div>
+    </nav>
+    <nav id="nav-desktop-tablet" class="hidden">
+        <a href="index.html">Home</a>
+        <a href="game.html">Games</a>
+        <a href="team.html">Team</a>
+        <a href="documents.html">Documents</a>
+        <p class="capstone">UMGC CMSC 495 Capstone Project</p>
+    </nav>
+    
+    <main id="minesweeper"> <h1>Minesweeper</h1> <section id="main-menu"> <div> <h2>Classic</h2> <p>Starts with a beginner grid and mine density. Increases in difficulty with each successful round.</p> <button id="start-classic" class="start-game" type="button">Start game</button> </div> <div> <h2>Customized</h2> <p>Choose your own grid dimensions and mine density.</p> <form> <div id="validation-err-msgs"></div> <div> <label for="length">Length</label> <input type="number" id="length" required> </div> <div> <label for="width">Width</label> <input type="number" id="width" required> </div> <div> <label for="mines">Mines</label> <input type="number" id="mines" required> </div> </form> <button id="start-customized" class="start-game" type="button">Start game</button> </div> </section> <section id="instructions" class="hidden"> <h2>Instructions</h2> <p>You will be presented with a grid of squares. Most of the squares will be safe,but some will conceal deadly mines.</p> <p>If you click on a safe square, the number of adjacent mines will be revealed (anywhere from 1 to 8). When there are no adjacent mines, surrounding squares will automatically be revealed until mines are encountered. But if you click on a square containing a hidden mine--boom!</p> <p>The game ends when you have either accidentally discovered a mine, or cleared all safe squares.</p> <h2>Tips + Other Info</h2> <ul> <li>The first click is always safe. There will never be a mine hiding under the first cell you choose.</li> <li>Not loving the current grid? Click on the happy emoji above the board to generate new mine placements and start over.</li> <li>Right-click to toggle between three states: uncleared, flagged (highly suspicious for mine activity), and question mark (somewhat suspicious). Although these states have no bearing on the final outcome, they can help you deduce which cells have mines.</li> <li>If you use the flag feature, keep an eye on the total number of flagged mines. This can help you assess risk and track your progress.</li> <li>Watch the time! The time only starts after the first click. The faster you can clear a grid, the better!</li> <li>For more information and to view basic patterns, visit this <a href="https://minesweepergame.com/strategy/how-to-play-minesweeper.php" target="_blank">minesweeper guide</a>.</li> </ul> <button id="exit-instructions" class="start-game">Start</button> </section> <section id="game" class="hidden"> <div id="board-background"> <div id="info"> <div id="flagged-mines-container"> <div id="mine-svg-container"> <img src="./images/minesweeper/bomb.svg" alt="Flagged mines"> </div> <p id="flagged-mines"></p> </div> <button id="emoji" class="restart"></button> <div id="timer"> <span id="minute">00</span>:<span id="second">00</span> </div> </div> <div id="board"></div> <div id="settings"> <p id="level"></p> <button class="return">Quit</button> </div> </div> <dialog id="end-game"> <div> <p id="end-game-msg"></p> <p id="elapsed-time"></p> <div> <button class="restart start-game"></button> <button class="return">Return to main menu</button> </div> </div> </dialog> </section> </main> <script src="./js/minesweeper.js" type="module"></script> 
+    
+    <footer>
+        <div class="footer-container">
+    
+            <section class="footer-links">
+                <p><a href="index.html">Home</a> | <a href="documents.html">Documentation</a> | <a href="team.html">Team</a> </p>
+                <br>
+            </section>
+            
+            <section class="footer-legal">
+                <p><b>Legal:This project is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</b> <a href="http://creativecommons.org/licenses/by-nc/4.0/">View License</a></p>
+                <br>
+            </section>
+    
+            <section class="footer-university">
+                <p><b>© 2024 by Web Game Devs. All rights reserved.</b></p>
+            </section>
+        </div>
+    </footer>
+</body>
+<script src="js/nav.js"></script>
+</html>
