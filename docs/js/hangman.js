@@ -5,9 +5,8 @@ const words = [
     "encapsulation", "abstraction", "polymorphism", "interface", "constructor", "destructor",
     "method", "module", "library", "framework", "database", "devops", "agile", "scrum", "kanban",
     "github", "markdown", "asynchronous", "callback", "closure", "prototype", "promise", "event",
-    "event loop", "concurrency", "parallelism", "deadlock", "race condition", "mutex", "semaphore",
-    "thread", "process", "thread pool", "dead code", "refactoring", "code smell", "unit test",
-    "integration test", "regression test", "sprint"
+    "concurrency", "parallelism", "deadlock", "mutex", "semaphore",
+    "thread", "process", "dead code", "refactoring", "sprint"
 ];
 
 // definitions
@@ -52,22 +51,14 @@ const wordDefinitions = {
     "prototype": "An object used as a template from which to create other objects.",
     "promise": "An object representing the eventual completion or failure of an asynchronous operation.",
     "event": "A signal that indicates that something has happened.",
-    "event loop": "A mechanism that waits for and dispatches events or messages in a program.",
     "concurrency": "The ability of different parts or units of a program to be executed out-of-order or in partial order.",
     "parallelism": "The simultaneous execution of multiple tasks.",
     "deadlock": "A situation where two or more processes are unable to proceed because each is waiting for the other to do something.",
-    "race condition": "A situation in which the behavior of a program depends on the timing of uncontrollable events.",
     "mutex": "A synchronization primitive used to control access to a shared resource by multiple threads.",
     "semaphore": "A synchronization primitive that restricts the number of simultaneous users of a shared resource.",
     "thread": "The smallest unit of execution that can be scheduled by an operating system.",
     "process": "An instance of a computer program that is being executed.",
-    "thread pool": "A collection of threads that are created once and reused for multiple tasks.",
-    "dead code": "Code that is never executed.",
     "refactoring": "The process of restructuring existing computer code without changing its external behavior.",
-    "code smell": "A surface indication that usually corresponds to a deeper problem in the system.",
-    "unit test": "A piece of code that tests a specific unit of functionality.",
-    "integration test": "Testing performed to examine the behavior of components when integrated together.",
-    "regression test": "Testing performed to verify that a recent program or code change has not adversely affected existing features.",
     "sprint": "A short, time-boxed period during which a specific task must be completed and made ready for review."
 };
 
@@ -95,7 +86,7 @@ function updateWrongGuesses() {
     const wrongGuessesElement = document.getElementById('wrongGuesses');
     console.log(wrongGuessesElement);
     if (wrongGuessesElement !== null) {
-        wrongGuessesElement.textContent = 'Wrong guesses: ' + wrongGuesses.join(', ');
+        wrongGuessesElement.textContent = 'Wrong guesses: ' + attempts;
     } else {
         console.error('Wrong guesses display element not found!');
     }
@@ -194,7 +185,9 @@ function checkGameOver() {
         initializeGame();
     } else if (attempts >= maxAttempts) {
         // If max number of attempts is reached, update image before showing the game over alert.
-        updateHangmanImage();
+        
+        updateHangmanImage()
+        
         
         // Delay the game over alert to allow the image to update on the screen.
         setTimeout(() => {
@@ -227,8 +220,18 @@ function submitFullWordGuess() {
         initializeGame();
     } else {
         // uncorrect fullword guesses count as a failed attempt(s).
-        attempts++;
-        updateHangmanImage();
+        if (!wrongGuesses.includes(document.getElementById('wordDisplay').innerText)) {
+            wrongGuesses.push(document.getElementById('wordDisplay').innerText);
+            attempts++;
+            updateHangmanImage();
+            updateWrongGuesses();
+        }
         checkGameOver();
     }
 }
+
+//handles reset game button onclick
+function restartGame() {
+    initializeGame()
+}
+
