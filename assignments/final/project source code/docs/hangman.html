@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Games</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav id="nav-mobile" class="hidden">
+        <button><img src="images/menu.svg" alt="Nav menu"></button>
+        <div class="hidden">
+            <a href="index.html">Home</a>
+            <a href="game.html">Games</a>
+            <a href="team.html">Team</a>
+            <a href="documents.html">Documents</a>
+            <p class="capstone">UMGC CMSC 495 Capstone Project</p>
+        </div>
+    </nav>
+    <nav id="nav-desktop-tablet" class="hidden">
+        <a href="index.html">Home</a>
+        <a href="game.html">Games</a>
+        <a href="team.html">Team</a>
+        <a href="documents.html">Documents</a>
+        <p class="capstone">UMGC CMSC 495 Capstone Project</p>
+    </nav>
+
+    <!-- Games section -->
+    <main class="game-container">
+        <!-- Game sel -->
+        <div class="game-list">
+
+            <!-- game 1: Hangman ver 1 godot
+            <section class="game">
+                <h2>Hangman</h2>
+                <p>Test your vocabulary by guessing letters to form a word.</p>
+                <iframe src="https://awaywithcharles.itch.io/hangmanbase" width="800" height="600" allowfullscreen></iframe>
+            </section> -->
+            
+            <!-- game 1: Hangman ver 2 js -->
+            <section class="hangman-game">
+                <h2>Hangman</h2>
+                <div id="hangmanGameplay" class="hangman-gameplay">
+                    <div class="hangman-image-container">
+                        <img id="hangmanImages" class="hangman-images" src="images/hangman/HangmanPole.png" alt="Hangman" style="height: 300px;">
+                    </div>
+                    <div style="flex: 2; display: flex; flex-direction: column; align-items: center;">
+                        <div class="hangman-word-display" id="wordDisplay" style="font-size: 24px; margin-bottom: 20px;"></div>
+                        <div id="letterButtons" class="letter-buttons" style="margin-bottom: 20px;"></div>
+                        <div class="hangman-wrong-guesses" id="wrongGuesses" style="font-size: 18px; color: red; margin-bottom: 20px;"></div>
+                        <input type="text" class="hangman-input" id="fullWordGuess" placeholder="Guess the full word" style="margin-top: 20px;"/>
+                        <button class="hangman-button" onclick="submitFullWordGuess()">Guess Word</button>
+                        <button class="hangman-button" onclick="restartGame()">Restart Game</button>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+
+            <section class="footer-links">
+                <p><a href="index.html">Home</a> | <a href="documents.html">Documentation</a> | <a href="team.html">Team</a> </p>
+                <br>
+            </section>
+            
+            <section class="footer-legal">
+                <p><b>Legal:This project is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</b> <a href="http://creativecommons.org/licenses/by-nc/4.0/">View License</a></p>
+                <br>
+            </section>
+
+            <section class="footer-university">
+                <p><b>© 2024 by Web Game Devs. All rights reserved.</b></p>
+            </section>
+        </div>
+    </footer>
+
+<script src="js/hangman.js"></script>
+<script src="js/nav.js"></script>
+</body>
+
+</html>
