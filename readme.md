@@ -24,11 +24,7 @@ Our goal is to combine education and entertainment, leveraging the appeal of the
 
 To explore the website and play the game, visit our GitHub Pages site:
 
-[Explore and Play](https://AwaywithCharles.github.io/CMSC495-Capstone/) (not deployed yet/inw)
-
-## For Developers and Contributors
-
-This project is the culmination of our undergraduate studies, and we welcome feedback, contributions, and suggestions. Whether you're interested in enhancing the game, improving the site's design, or adding educational content, your input is invaluable.
+[Explore and Play](https://AwaywithCharles.github.io/CMSC495-Capstone/)
 
 ## License
 
